@@ -18,6 +18,10 @@ clone or download the repo, cd into the directory and run:
 
 Upon completion, a `BinaryAnalysis.csv` will be produced containing the results of the scan.
 
+Example:
+
+![Image](https://esic-da.github.io/images/AHA-Scraper.png)
+
 Note: depending on your host security setup, you may need to Allow unsigned powershell scripts: "Set-ExecutionPolicy RemoteSigned" and hit "y" and enter. At some future date we will look into signing the necessary files to avoid this.
 
 ## Running on Linux
