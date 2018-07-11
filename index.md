@@ -40,3 +40,7 @@ If you would like to build from source there are additional requirements, please
 
 1. Move the `BinaryAnalysis.csv` output from AHA-Scraper into the directory that contains AHA-GUI.jar
 1. Either double click `AHA-GUI.jar` or open a terminal/powershell and cd to the correct directory and type `java -jar AHA-GUI.jar`
+
+Example:
+
+![Image](https://github.com/ESIC-DA/AHA-GUI/raw/master/resources/AHA-GUI-Screenshot.png?raw=true)
