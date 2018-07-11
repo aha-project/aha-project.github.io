@@ -18,5 +18,9 @@ powershell.exe -File .\AHA-Scraper.ps1
 
 Note: depending on your host security setup, you may need to Allow unsigned powershell scripts: "Set-ExecutionPolicy RemoteSigned" and hit "y" and enter. At some future date we will look into signing the necessary files to avoid this.
 
+## Linux
+
+Support for linux distros (such as RHEL/Fedora/CentOS and Ubuntu/Debian), and possibly other distributions and operating systems will hopefully debut at a future date.
+
 # Using AHA-GUI
 
