@@ -24,3 +24,13 @@ Support for linux distros (such as RHEL/Fedora/CentOS and Ubuntu/Debian), and po
 
 # Using AHA-GUI
 
+## Dependencies
+
+AHA-GUI requires the latest Java 1.8.0 (Java 10 has not been tested yet, but will be validated in the near future).
+
+If you would like to build from source there are additional requirements, please refer to the readme for AHA-GUI for more info.
+
+## Running AHA-GUI
+
+1. Move the `BinaryAnalysis.csv` output from AHA-Scraper into the directory that contains AHA-GUI.jar
+1. Either double click AHA-GUI.jar or open a terminal/powershell and cd to the correct directory and type `java -jar AHA-GUI.jar`
