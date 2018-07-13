@@ -12,11 +12,11 @@ The Windows AHA-Scraper has no real dependencies, but presently only works on x8
 
 ### Usage
 
-clone or download the repo, cd into the directory and run:
+use git clone, the github client, or click 'download project' to get the repsitory on your computer. Then cd into the directory and run:
 
 ```powershell.exe -File .\AHA-Scraper.ps1```
 
-Upon completion, a `BinaryAnalysis.csv` will be produced containing the results of the scan.
+Upon completion, `BinaryAnalysis.csv` will be produced containing the results of the scan.
 
 Example:
 
@@ -38,7 +38,7 @@ If you would like to build from source there are additional requirements, please
 
 ## Running AHA-GUI
 
-1. Move the `BinaryAnalysis.csv` output from AHA-Scraper into the directory that contains AHA-GUI.jar
+1. Move or copy the `BinaryAnalysis.csv` output from AHA-Scraper into the directory that contains AHA-GUI.jar
 1. Either double click `AHA-GUI.jar` or open a terminal/powershell and cd to the correct directory and type `java -jar AHA-GUI.jar`
 
 Example:
