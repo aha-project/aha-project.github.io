@@ -1,6 +1,6 @@
 # About AHA
 
-AHA is a suite of tools, presently this is two halves, the [AHA-Scraper](https://github.com/ESIC-DA/AHA-Scraper) host scraper component which gathers the information, and [AHA-GUI](https://github.com/ESIC-DA/AHA-GUI) visualizer which displays the results of the scraper.
+AHA is a suite of tools, presently this is two halves, the [AHA-Scraper](https://github.com/aha-project/AHA-Scraper) host scraper component which gathers the information, and [AHA-GUI](https://github.com/aha-project/AHA-GUI) visualizer which displays the results of the scraper.
 
 # Using AHA-Scraper
 
@@ -43,4 +43,4 @@ If you would like to build from source there are additional requirements, please
 
 Example:
 
-![Image](https://github.com/ESIC-DA/AHA-GUI/raw/master/resources/AHA-GUI-Screenshot.png?raw=true)
+![Image](https://github.com/aha-project/AHA-GUI/raw/master/resources/AHA-GUI-Screenshot.png?raw=true)
