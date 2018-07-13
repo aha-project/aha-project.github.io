@@ -30,11 +30,13 @@ Support for linux distros (such as RHEL/Fedora/CentOS and Ubuntu/Debian), and po
 
 # Using AHA-GUI
 
-## Dependencies
+## Dependencies and Installation
 
 AHA-GUI requires the latest Java 1.8.0 (Java 10 has not been tested yet, but will be validated in the near future).
 
-If you would like to build from source there are additional requirements, please refer to the readme for AHA-GUI for more info.
+Get the current built and zipped version from our [Releases Page](https://github.com/aha-project/AHA-GUI/releases) and unzip it in a place of your choosing.
+
+Note: If you would like to build from source there are additional requirements and instructions, please refer to the readme in the AHA-GUI repository for more info.
 
 ## Running AHA-GUI
 
