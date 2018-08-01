@@ -29,7 +29,7 @@ Note: depending on your host security setup, you may need to Allow unsigned powe
 Intial support for linux distros (presently tested on RHEL/Fedora/CentOS and Ubuntu/Debian) is now available!
 
 ### Dependencies
-The Linux AHA-Scraper has no real dependencies, but presently is only tested on 64bit versions of RHEL and Debian derivitives (RHEL7/CentOS7/Ubuntu 18.04/Kali Linux (at present) specifically). Support for other distros will evolve and improve as time goes on. As of late July 2018, there are known bugs which may produce some scan issues that are being worked on.
+The Linux AHA-Scraper has no real dependencies, but presently is only tested on 64bit versions of RHEL and Debian derivitives (RHEL7/CentOS7/Ubuntu 18.04/Kali Linux (at present) specifically). Support for other distros will evolve and improve as time goes on. As of August 1st 2018 there are no longer any known issues that impede the general usage of the Linux scraper.
 
 ### Usage
 use git clone, the github client, or click 'download project' to get the repsitory on your computer. Then cd into the directory and run:
