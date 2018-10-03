@@ -55,7 +55,16 @@ Note: If you would like to build from source there are additional requirements a
 1. Move or copy the `BinaryAnalysis.csv` output from AHA-Scraper into the directory that contains AHA-GUI.jar
 1. Either double click `AHA-GUI.jar` or open a terminal/powershell and cd to the correct directory and type `java -jar AHA-GUI.jar`
 
-Example:
+If you invoke from the commandline, the following commandline arguments can be used:
+ * --debug : print additional information to console while running
+ * --single : use single lines between nodes with multiple connections
+ * --bigfont : use 18pt font instead of the default 12pt font (good for demos)
+ * scorefile=scorefile.csv : use the scorefile specified after the equals sign
+ * inputFile=inputFile.csv : use the inputFile specified after the equals sign
+ * lowVulnThreshold=25 : use the integer after the equals as the minimum node score to get a low vulnerability score (green)
+ * medVulnThreshold=15 : use the integer after the equals as the minimum node score to get a medium vulnerability score (yellow)
+
+Example of AHA-GUI running:
 
 ![Image](https://aha-project.github.io/images/AHA-GUI.png)
 
@@ -84,3 +93,8 @@ The buttons/checkboxes along the bottom have the following uses (from left to ri
 - Reset Zoom: this button will reset the graph scale if things go awry, as they sometimes do.
 - Show Inspector: if you have hidden the inspector window by closing it, this will re-summon it.
 - Score method dropdown: presently contains 3 items, "Normal", "WorstCommonProc", and "ECScore". Normal uses the "Normal" score method described later which uses metrics from the MetricsTable.config located in the same directory as the AHA-GUI.jar. WorstCommonProc gives all processes with the same username the worst score for any proc under that user. ECScore is the EigenCentrality score method, which is the first attempt at weighting nodes closer to external nodes as having more attack-ability.
+- Hide OS Procs: Hides operating system processes which can sometimes clutter the view such as svchost.exe, spoolsv.exe, lsass.exe, and others. This is presently defined by an internal list of application paths, which will probably some day be split out into a config file similar to MetricsTable.cfg
+- Hide Ext Node: this hides the virtual "External" node and all connections to it to help unclutter the graph.
+- DNS Names: switches Ext_<IP> format names to Ext_<DNS Name>. Example: would switch "Ext_10.0.0.1 to Ext_SomeHost".
+- Custom Scorefile: Overlays custom information from a custom scorefile. Default filename is scorefile.csv. There is an example for the custom scorefile in the AHA-GUI repository in the resources directory. You can use custom scorefile filenames by specifying scorefile=<path/to/customscorefile.csv> on the commandline when staring AHA-GUI.
+  
