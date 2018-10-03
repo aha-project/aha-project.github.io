@@ -108,7 +108,9 @@ This view shows a summary of the evaluated graph, and also reflects what is prod
 The top portion shows overall statistics as well as when the scan data was taken/etc.
 Below that is a table reflecting what is visible in the graph. Each row is a visible process/graph node, with useful data shown about each process, which is a much quicker way to compare things than attempting to click on each node in the graph and see values. Future versions will allow node highlighting in the graph based on clicks in the data view, and will probably allow multiple inspectors to also help facilitate process comparisons.
 
+### Listening Processes
 ![Image](https://aha-project.github.io/images/AHA-GUI-DataView-ListeningProcs.png)
+This view shows all bound ports visible in the graph, and which processes they are bound to, which helps give an overall view of services in the graph, as well as which are bound to internal only ports vs externally visible ports.
   
 ## Attack Surface Scoring methodology
 As noted above in the AHA-GUI walkthrough, there are several scoring methods, but we will start with the most basic. The standard scoring method used in AHA-GUI is called "Normal". This applies rules from the MetricsTable.cfg located within the same directory as AHA-GUI.jar which is editable as a text file, and contains a default ruleset as well as an explanation of ho w to create new rules.
