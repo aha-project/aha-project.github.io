@@ -102,7 +102,11 @@ The buttons/checkboxes along the bottom have the following uses (from left to ri
 
 There are presently two tabs in the Data View: Vulnerabilty Metrics, and Listening Processes.
 
+### Vulnerability Metrics
 ![Image](https://aha-project.github.io/images/AHA-GUI-DataView-VulnMetrics.png)
+This view shows a summary of the evaluated graph, and also reflects what is produced in the AHA-GUI-Report.csv 
+The top portion shows overall statistics as well as when the scan data was taken/etc.
+Below that is a table reflecting what is visible in the graph. Each row is a visible process/graph node, with useful data shown about each process, which is a much quicker way to compare things than attempting to click on each node in the graph and see values. Future versions will allow node highlighting in the graph based on clicks in the data view, and will probably allow multiple inspectors to also help facilitate process comparisons.
 
 ![Image](https://aha-project.github.io/images/AHA-GUI-DataView-ListeningProcs.png)
   
