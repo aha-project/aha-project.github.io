@@ -68,7 +68,7 @@ Example of AHA-GUI running:
 
 ![Image](https://aha-project.github.io/images/AHA-GUI.png)
 
-## AHA-GUI Walkthrough
+## AHA-GUI Main Window Walkthrough
 
 In the above image we can see the gui as it appears at launch. The lefthand side is the main AHA-GUI window, the righthand side is the Graph Node Inspector. The Graph Node Inspector is shown by default at launch, and shows details of the graph nodes when they are clicked. There are two checkboxes at the bottom which provide inspector options. One is an option to update the inspector when you hover on nodes. There is also an option to show metric specifics, which will show exactly which criteria matched (you must click/hover on a new node after enabling this option for it to take effect).
 
@@ -97,6 +97,14 @@ The buttons/checkboxes along the bottom have the following uses (from left to ri
 - Hide Ext Node: this hides the virtual "External" node and all connections to it to help unclutter the graph.
 - DNS Names: switches Ext_<IP> format names to Ext_<DNS Name>. Example: would switch "Ext_10.0.0.1 to Ext_SomeHost".
 - Custom Scorefile: Overlays custom information from a custom scorefile. Default filename is scorefile.csv. There is an example for the custom scorefile in the AHA-GUI repository in the resources directory. You can use custom scorefile filenames by specifying scorefile=<path/to/customscorefile.csv> on the commandline when staring AHA-GUI.
+  
+## AHA-GUI Data View Walkthrough  
+
+There are presently two tabs in the Data View: Vulnerabilty Metrics, and Listening Processes.
+
+![Image](https://aha-project.github.io/images/AHA-GUI-DataView-VulnMetrics.png)
+
+![Image](https://aha-project.github.io/images/AHA-GUI-DataView-ListeningProcs.png)
   
 ## Attack Surface Scoring methodology
 As noted above in the AHA-GUI walkthrough, there are several scoring methods, but we will start with the most basic. The standard scoring method used in AHA-GUI is called "Normal". This applies rules from the MetricsTable.cfg located within the same directory as AHA-GUI.jar which is editable as a text file, and contains a default ruleset as well as an explanation of ho w to create new rules.
