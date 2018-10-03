@@ -78,3 +78,6 @@ These terms can also be or'd together with the `||` symbol:
 
 `processname==svchost.exe || ~processname==spoolsv.exe` will emphasize svchost.exe and hide spoolsv.exe at the same time. Please note this syntax is lazily evaluated from beginning to end per token. This means we split the complex query up by || and then process starting with the leftmost term, moving rightward. Thus if there is any conflict between the terms, the rightmost will win.
 
+
+aa
+
