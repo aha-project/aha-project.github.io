@@ -57,4 +57,24 @@ Note: If you would like to build from source there are additional requirements a
 
 Example:
 
-![Image](https://github.com/aha-project/AHA-GUI/raw/master/resources/AHA-GUI-Screenshot.png?raw=true)
+![Image](https://aha-project.github.io/images/AHA-GUI.png)
+
+## AHA-GUI Walkthrough
+
+In the above image we can see the gui as it appears at launch. The lefthand side is the main AHA-GUI window, the righthand side is the Graph Node Inspector. The Graph Node Inspector is shown by default at launch, and shows details of the graph nodes when they are clicked. There is also an option to update the inspector when you hover on nodes. Additionally there an option to show metric specifics, which will show exactly which criteria matched (you must click/hover on a new node after enabling this option for it to take effect).
+
+The main GUI is largely comprised of the graph view which shows external conenctions in red, internal connections in white, and duplicate connections in darker versions of each of those colors (i.e. darker red, and gray for duplicate connections). Connections in TIME_WAIT, CLOSE_WAIT, SYN_SENT, etc. are drawn as a dashed line. All solid connections with the exception of the connections drawn to the "External" virtual node are established connections. 
+
+The "External" virtual node is drawn to help visualize any service which has a port bound that would allow connection from an external entity. This node can be hidden by selecting "Hide Ext Node" from the bottom area of the main graph view.
+
+Along the bottom of the main AHA-GUI window there are two areas. The bottom-most area contains buttons and checkboxes to alter view and other options which will be discussed further below. Above that is a textual area which outputs a summary of what is available in the inspector view including the name of the process/graph node, the user and path of the process, connections it has to other processes, and a summary of all the score metrics which matched their criteria. Below this output area is a search bar which allows graph nodes/edges to either be emphasized (highlighted/edged in blue) or hidden (entirely hidden from the graph). Example syntax for the search bar are:
+
+`processname==svchost.exe` will emphasize svchost.exe
+`~processname==spoolsv.exe` will hide spoolsv.exe
+`processname!=svchost.exe` will emphasize everything that is *not* svchost.exe
+`~processname==spoolsv.exe` will hide everything that is *not* spoolsv.exe
+
+These terms can also be or'd together with the `||` symbol:
+
+`processname==svchost.exe || ~processname==spoolsv.exe` will emphasize svchost.exe and hide spoolsv.exe at the same time. Please note this syntax is lazily evaluated from beginning to end per token. This means we split the complex query up by || and then process starting with the leftmost term, moving rightward. Thus if there is any conflict between the terms, the rightmost will win.
+
