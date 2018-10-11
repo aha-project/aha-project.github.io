@@ -61,8 +61,6 @@ If you invoke from the commandline, the following commandline arguments can be u
  * --bigfont : use 18pt font instead of the default 12pt font (good for demos)
  * scorefile=scorefile.csv : use the scorefile specified after the equals sign
  * inputFile=inputFile.csv : use the inputFile specified after the equals sign
- * lowVulnThreshold=25 : use the integer after the equals as the minimum node score to get a low vulnerability score (green)
- * medVulnThreshold=15 : use the integer after the equals as the minimum node score to get a medium vulnerability score (yellow)
 
 Example of AHA-GUI running:
 
