@@ -57,6 +57,7 @@ Note: If you would like to build from source there are additional requirements a
 
 If you invoke from the commandline, the following commandline arguments can be used:
  * --debug : print additional information to console while running
+ * --verbose : print additional information to console while running, but not as much as debug. Useful for troubleshooting issues with input files.
  * --single : use single lines between nodes with multiple connections
  * --bigfont : use 18pt font instead of the default 12pt font (good for demos)
  * scorefile=scorefile.csv : use the scorefile specified after the equals sign
@@ -73,6 +74,10 @@ In the above image we can see the gui as it appears at launch. The lefthand side
 The main GUI is largely comprised of the graph view which shows external conenctions in red, internal connections in white, and duplicate connections in darker versions of each of those colors (i.e. darker red, and gray for duplicate connections). Connections in TIME_WAIT, CLOSE_WAIT, SYN_SENT, etc. are drawn as a dashed line. All solid connections with the exception of the connections drawn to the "External" virtual node are established connections. 
 
 The "External" virtual node is drawn to help visualize any service which has a port bound that would allow connection from an external entity. This node can be hidden by selecting "Hide Ext Node" from the bottom area of the main graph view.
+
+An Example Video Demo of AHA-GUI Features (link to video hosted on youtube) is also available:
+
+[![AHA-GUI December 2018 Demo Video](https://img.youtube.com/vi/D_4unUlMa2Q/0.jpg)](https://www.youtube.com/watch?v=D_4unUlMa2Q)
 
 Along the bottom of the main AHA-GUI window there are two areas. The bottom-most area contains buttons and checkboxes to alter view and other options which will be discussed further below. Above that is a textual area which outputs a summary of what is available in the inspector view including the name of the process/graph node, the user and path of the process, connections it has to other processes, and a summary of all the score metrics which matched their criteria. Below this output area is a search bar which allows graph nodes/edges to either be emphasized (highlighted/edged in blue) or hidden (entirely hidden from the graph). Example syntax for the search bar:
 
