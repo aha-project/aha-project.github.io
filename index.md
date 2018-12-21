@@ -75,7 +75,7 @@ The main GUI is largely comprised of the graph view which shows external conenct
 
 The "External" virtual node is drawn to help visualize any service which has a port bound that would allow connection from an external entity. This node can be hidden by selecting "Hide Ext Node" from the bottom area of the main graph view.
 
-An Example Video Demo of AHA-GUI Features (link to video hosted on youtube) is also available:
+**An Example Video Demo of AHA-GUI Features (link to video hosted on youtube) is also available:**
 
 [![AHA-GUI December 2018 Demo Video](https://img.youtube.com/vi/D_4unUlMa2Q/0.jpg)](https://www.youtube.com/watch?v=D_4unUlMa2Q)
 
