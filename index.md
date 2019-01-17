@@ -46,14 +46,16 @@ Note: you may need to make the script executable before running by using `chmod 
 
 AHA-GUI requires the latest Java 1.8.0 (Java 10 has not been tested yet, but will be validated in the near future).
 
-Get the current built and zipped version from our [Releases Page](https://github.com/aha-project/AHA-GUI/releases) and unzip it in a place of your choosing.
+Get the current built and zipped version from our [AHA-GUI Releases Page](https://github.com/aha-project/AHA-GUI/releases) and unzip it in a place of your choosing.
 
 Note: If you would like to build from source there are additional requirements and instructions, please refer to the readme in the AHA-GUI repository for more info.
 
 ## Running AHA-GUI
 
-1. Move or copy the `BinaryAnalysis.csv` output from AHA-Scraper into the directory that contains AHA-GUI.jar
-1. Either double click `AHA-GUI.jar` or open a terminal/powershell and cd to the correct directory and type `java -jar AHA-GUI.jar`
+1. When you start the GUI it will ask you which file you would like to open. The other instructions about moving files or running with command line arguments to select file still work, but are no longer required.
+1. ~~Move or copy the `BinaryAnalysis.csv` output from AHA-Scraper into the directory that contains AHA-GUI.jar~~
+1. ~~Either double click `AHA-GUI.jar` or open a terminal/powershell and cd to the correct directory and type `java -jar AHA-GUI.jar`~~
+
 
 If you invoke from the commandline, the following commandline arguments can be used:
  * --debug : print additional information to console while running
