@@ -54,7 +54,7 @@ Note: If you would like to build from source there are additional requirements a
 
 1. When you start the GUI it will ask you which file you would like to open. The other instructions about moving files or running with command line arguments to select file still work, but are no longer required.
 1. ~~Move or copy the `BinaryAnalysis.csv` output from AHA-Scraper into the directory that contains AHA-GUI.jar~~
-1. ~~Either double click `AHA-GUI.jar` or open a terminal/powershell and cd to the correct directory and type `java -jar AHA-GUI.jar`~~
+1. To start AHA-GUI either double click `AHA-GUI.jar` or open a terminal/powershell and cd to the correct directory and type `java -jar AHA-GUI.jar`
 
 
 If you invoke from the commandline, the following commandline arguments can be used:
