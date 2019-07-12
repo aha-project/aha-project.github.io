@@ -35,7 +35,7 @@ Note: depending on your host security setup, you may need to Allow unsigned powe
 Intial support for linux distros (presently tested on RHEL/Fedora/CentOS and Ubuntu/Debian) is now available!
 
 ### Dependencies
-The Linux AHA-Scraper has no real dependencies, but presently is only tested on 64bit versions of RHEL and Debian derivitives (RHEL7/CentOS7/Ubuntu 18.04/Kali Linux (at present) specifically). Support for other distros will evolve and improve as time goes on. As of August 1st 2018 there are no longer any known issues that impede the general usage of the Linux scraper.
+The Linux AHA-Scraper presently has no real dependencies, but is only tested on 64bit versions of RHEL and Debian derivitives (RHEL7/CentOS7/Ubuntu 18.04/Kali Linux (at present) specifically). Support for other distros will evolve and improve as time goes on. As of August 1st 2018 there are no longer any known issues that impede the general usage of the Linux scraper. In the future we will be releasing a python 2.7 version (summer 2019?) followed by a migration to python 3.x in sept/oct.
 
 ### Usage
 use git clone, the github client, or click 'download project' to get the repsitory on your computer. Then cd into the directory and run:
@@ -50,7 +50,7 @@ Note: you may need to make the script executable before running by using `chmod 
 
 ## Dependencies and Installation
 
-AHA-GUI requires the latest Java 1.8.0 (Java 10 has not been tested yet, but will be validated in the near future).
+AHA-GUI requires the latest Java 1.8.0+. We suggest OpenJDK on *nix platforms or AdoptOpenjdk.net installers for macOS and Windows™. The Oracle installers will work as well, but their recent license changes have made it more trouble than they are worth to install, thus we only test against OpenJDK on linux and AdoptOpenJDK installed 1.8 and JDK11 LTS on macOS and Windows. While we attempt to test things as much as possible, we are researchers. There is no warranty or guarantee this software will work as expected.
 
 Get the current built and zipped version from our [AHA-GUI Releases Page](https://github.com/aha-project/AHA-GUI/releases) and unzip it in a place of your choosing.
 
@@ -68,8 +68,13 @@ If you invoke from the commandline, the following commandline arguments can be u
  * --verbose : print additional information to console while running, but not as much as debug. Useful for troubleshooting issues with input files.
  * --single : use single lines between nodes with multiple connections
  * --bigfont : use 18pt font instead of the default 12pt font (good for demos)
+ * --forceJMenu : on macs, force use of normal JMenu rather than using the traditional macOS menubar at the top of the screen
+ * --notheme : attempt to minimize theming information set on gui components so that the OS theme will be used. Unsupported / components may be oddly sized.
+ * --noforcescale : ignore the app attempting to force the scale down to 100% to avoid several existing graphstream bugs.
+ * --updateFile : update a given inputFile with information about attacksurface/threats from internet sources (presently aDolus)
  * scorefile=scorefile.csv : use the scorefile specified after the equals sign
  * inputFile=inputFile.csv : use the inputFile specified after the equals sign
+ * credsFile=inputFile.csv : use the credsFile for the credentials to update the input file (used with --updateFile) specified after the equals sign
 
 Example of AHA-GUI running:
 
@@ -77,7 +82,7 @@ Example of AHA-GUI running:
 
 ## AHA-GUI Main Window Walkthrough
 
-In the above image we can see the gui as it appears at launch. The lefthand side is the main AHA-GUI window, the righthand side is the Graph Node Inspector which shows details of the graph nodes when they are clicked. There are two checkboxes at the bottom which provide inspector options. The first is an option to only show matched metrics (checked by defult) which will only show the score rules which matched on the selected node. There is also an option to show metric specifics, which will show exactly which criteria matched (you must click/hover on a new node after enabling/disabling these options for it to take effect).
+In the above image we can see the gui as it appears at launch. The lefthand side is the main AHA-GUI view area, the righthand side is the Graph Node Inspector which shows details of the graph nodes when they are clicked.
 
 The main GUI is largely comprised of the graph view which shows external conenctions in red, internal connections in white, and duplicate connections in darker versions of each of those colors (i.e. darker red, and gray for duplicate connections). Connections in TIME_WAIT, CLOSE_WAIT, SYN_SENT, etc. are drawn as a dashed line. All solid connections with the exception of the connections drawn to the "External" virtual node are established connections. 
 
@@ -87,7 +92,7 @@ The "External" virtual node is drawn to help visualize any service which has a p
 
 [![AHA-GUI December 2018 Demo Video](https://img.youtube.com/vi/D_4unUlMa2Q/0.jpg)](https://www.youtube.com/watch?v=D_4unUlMa2Q)
 
-Along the bottom of the main AHA-GUI window there are two areas. The bottom-most area contains buttons and checkboxes to alter view and other options which will be discussed further below. Above that is a textual area which outputs a summary of what is available in the inspector view including the name of the process/graph node, the user and path of the process, connections it has to other processes, and a summary of all the score metrics which matched their criteria. Below this output area is a search bar which allows graph nodes/edges to either be emphasized (highlighted/edged in blue) or hidden (entirely hidden from the graph). Example syntax for the search bar:
+Along the bottom of the main AHA-GUI window there is a search bar. The search bar allows graph nodes/edges to either be emphasized (highlighted/edged in blue) or hidden (entirely hidden from the graph). Example syntax for the search bar:
 
 `processname==svchost.exe` will emphasize svchost.exe
 `~processname==spoolsv.exe` will hide spoolsv.exe
@@ -99,16 +104,37 @@ These terms can also be OR-ed together with the `||` symbol:
 `processname==svchost.exe || ~processname==spoolsv.exe` will emphasize svchost.exe and hide spoolsv.exe at the same time. Please note this syntax is lazily evaluated from beginning to end per token. This means we split the complex query up by `||` and then process starting with the leftmost term, moving rightward. Thus if there is any conflict between the terms, the rightmost will win.
 
 
-The buttons/checkboxes along the bottom have the following uses (from left to right):
-- Show data view: this opens a tabular view which shows results data generated by the GUI. This view will be explained in a later section of this document.
-- Reset Zoom: this button will reset the graph scale if things go awry, as they sometimes do.
-- Score method dropdown: presently contains 3 items, "Normal", "WorstCommonProc", and "ECScore". Normal uses the "Normal" score method described later which uses metrics from the MetricsTable.config located in the same directory as the AHA-GUI.jar. WorstCommonProc gives all processes with the same username the worst score for any proc under that user. ECScore is the EigenCentrality score method, which is the first attempt at weighting nodes closer to external nodes as having more attack-ability.
-- Open New File: closes the existing view and opens a file chooser to open a new file for viewing.
-- Hide OS Procs: Hides operating system processes which can sometimes clutter the view such as svchost.exe, spoolsv.exe, lsass.exe, and others. This is presently defined by an internal list of application paths, which will probably some day be split out into a config file similar to MetricsTable.cfg
-- Hide Ext Node: this hides the virtual "External" node and all connections to it to help unclutter the graph.
-- DNS Names: switches Ext_<IP> format names to Ext_<DNS Name>. Example: would switch "Ext_10.0.0.1 to Ext_SomeHost".
-- Custom Scorefile: Overlays custom information from a custom scorefile. Default filename is scorefile.csv. There is an example for the custom scorefile in the AHA-GUI repository in the resources directory. You can use custom scorefile filenames by specifying scorefile=<path/to/customscorefile.csv> on the commandline when staring AHA-GUI.
-- Update on MouseOver: updates the bottom summary view and graph inspector every time you hover over a new node on the graph rather than requiring a click on a node to update the info views.
+
+Graph view options and other features can be accessed through the menus (as of 0.6.8, previously they were buttons on the main application window). On macOS by default they will show up in the regular operating system menu bar on the top of the screen. All other platforms will have the menu at the top of each application window (or optionally on macOS if using the appropriate command line option).
+
+File Menu:
+ - Open... : This allows you to select a file. If a file is currently loaded, this will be closed and a new file loaded.
+ - Open Data View : This opens the data view window which has a textual spreadsheet like representation of the graph data. This view will be explained in a later section of this document.
+ - Update File... : This will attempt to use remote database credentials (default stored in credentials.txt in the same directory as AHA-GUI.jar) to update the currently opened file with information from the remote database, and then reload the resultant updated file.
+ - Exit : Exits AHA-GUI.
+ 
+ View Menu: 
+ - Hide Windows Operating System Processes : Hides operating system processes which can sometimes clutter the view such as svchost.exe, spoolsv.exe, lsass.exe, and others. This is presently defined by an internal list of application paths, which will probably some day be split out into a config file similar to MetricsTable.cfg
+ - Show External Node : this will show/hide the virtual "External" node and all connections to it to help unclutter the graph.
+ - Use DNS Names : switches Ext_<IP> format names to Ext_<DNS Name>. Example: would switch "Ext_10.0.0.1 to Ext_SomeHost".
+ - Use Custom Scorefile : Overlays custom information from a custom scorefile. Default filename is scorefile.csv. There is an example for the custom scorefile in the AHA-GUI repository in the resources directory. You can use custom scorefile filenames by specifying scorefile=<path/to/customscorefile.csv> on the commandline when staring AHA-GUI.
+ ----
+ - Show Only Matched Metrics : only show matched metrics (checked by defult) which will only show the score rules which matched on the selected node.
+ - Show Score Metric Specifics : show metric specifics, which will show exactly which criteria matched.
+ - Update on MouseOver : updates the bottom summary view and graph inspector every time you hover over a new node on the graph rather than requiring a click on a node to update the info views.
+ ---
+ - Show Connectionless Nodes : Show nodes with no pipe/tcp/udp/etc connections to other nodes in the graph.
+ - Show Pipe : Show nodes which have named pipe connections between them.
+ - Show TCP : Show nodes which have TCP connections between them.
+ - Show UDP : Show nodes which have bound UDP sockets on the graph.
+ ---
+ - Normal Score Method : Normal uses the "Normal" score method described later which uses metrics from the MetricsTable.config located in the same directory as the AHA-GUI.jar.
+ - WorstCommonProc Score Method (Beta) : WorstCommonProc gives all processes with the same username the worst score for any proc under that user.
+ - Relative Score Method (Beta) : A beta score method that tries to use relative weights, and relativity to nodes that score poorly to weight neighbors
+
+ Window Menu: 
+ - Reset Zoom: this button will reset the graph scale if things go awry, as they sometimes do.
+
   
 ## AHA-GUI Data View Walkthrough  
 
