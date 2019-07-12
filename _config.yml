@@ -4,5 +4,6 @@ show_downloads: false
 description:
 google_analytics:
 github:
+  repository_url: github.com/aha-project
   zip_url:
   tar_url:
