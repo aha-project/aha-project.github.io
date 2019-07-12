@@ -18,6 +18,12 @@ use git clone, the github client, or click 'download project' to get the repsito
 
 Upon completion, `BinaryAnalysis.csv` will be produced containing the results of the scan.
 
+#### Command Line Options
+
+By default the script scans for a few seconds, to generate at least some traffic statistics on supported platforms (so you can see which connections had 0 bytes transfered, and which had thousands, and see connections come and go over time). To scan for more than a few seconds use the -SecondsToScan argument to provide a number of seconds to scan. For example:
+
+```powershell.exe -File .\AHA-Scraper.ps1 -SecondsToScan 60```
+
 Example:
 
 ![Image](https://aha-project.github.io/images/AHA-Scraper.png)
