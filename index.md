@@ -135,6 +135,9 @@ File Menu:
  Window Menu: 
  - Reset Zoom: this button will reset the graph scale if things go awry, as they sometimes do.
 
+## Remote databases
+AHA-GUI supports looking up file hashes in remote databases. Currently [aDolus](https://www.adolus.com), an ICS Whitelist database, is the supported option. Using the `API Access` page on aDolus, get your API key. Paste the key in a file called `credentials.txt` and put it in the same directory as `AHA-GUI.jar`. When loading a file with hashes (requires AHA-Scraper Windows v0.8.5+), you will be able to either use the --updateFile commandline switch or use the `Update File...` command from the file menu. This will ask aDolus about each of the unique hashes found in the input file over an HTTPS connection, update the file with the results, and then reload the GUI (assuming the gui is running -- not applicable if you're just updating files using the cli method). Currently the aDolus file score, the quantity and numeric score of each CVE, the worst CVE (highest number), method of data entry into aDolus (parner submission, etc), and last time file was updated are what are written into the file after updating, and what are exposed in the GUI.
+
   
 ## AHA-GUI Data View Walkthrough  
 
