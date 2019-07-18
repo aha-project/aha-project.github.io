@@ -63,6 +63,13 @@ JDK8 or JDK11 are tested; JDK12 or later should work but are not tested against.
 
 **Linux**: We would recomend whatever OpenJDK is in your package manger for the linux platform you're on. OpenJDK8 will suffice, in brief testing, OpenJDK11 may see better graphics performace on Linux. Using the command line flag `-Dsun.java2d.opengl=true` (example `java -Dsun.java2d.opengl=true -jar AHA-GUI.jar`) may provide improved graphics performance.
 
+#### Various tips/tricks/hints for platforms
+MacOS: the Java8 JREs seem to provide a bit more perofrmance (at least with graphstream), along with having HiDPI (Retina) support that works correctly with graphstream. Depending on various items, Java8 may not allow the menubar to move to the top of the screen macOS menubar location. JDK11 works well on non-retina machines that do not have performance issues.
+
+Windows: No major recomendations for JDK8 vs JDK11.
+
+Linux: Java11 seems to have better performance by default.
+
 ## Running AHA-GUI
 
 1. When you start the GUI it will ask you which file you would like to open. The other instructions about moving files or running with command line arguments to select file still work, but are no longer required.
