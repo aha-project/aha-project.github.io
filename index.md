@@ -58,9 +58,10 @@ Note: If you would like to build from source there are additional requirements a
 
 ### About Java Runtimes
 **Windows/MacOS**: For those who do not wish to create oracle accounts or deal with their licensing (though their JRE/JDK will run this fine), [AdoptOpenJDK](https://adoptopenjdk.net) has precompiled OpenJDK installers for several platforms. Amazon with their [Amazon Corretto](https://aws.amazon.com/corretto/) progam which also provides a similar set of precompiled installers which they advertise as "No-cost, multiplatform, production-ready distribution of OpenJDK" 
+
 **Linux**: We would recomend whatever OpenJDK is in your package manger for the linux platform you're on. OpenJDK8 will suffice, in brief testing, OpenJDK11 may see better graphics performace on Linux. Using the command line flag `-Dsun.java2d.opengl=true` (example `java -Dsun.java2d.opengl=true -jar AHA-GUI.jar`) may provide improved graphics performance.
 
-Regardless which version you chose (JDK8, JDK11, etc.) we recomend you always keep it up to date.
+Regardless which version you chose (JDK8, JDK11, etc.) we recomend you always keep it **updated** and up to date.
 
 ## Running AHA-GUI
 
