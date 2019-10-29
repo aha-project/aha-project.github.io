@@ -56,6 +56,20 @@ Get the current built and zipped version from our [AHA-GUI Releases Page](https:
 
 Note: If you would like to build from source there are additional requirements and instructions, please refer to the readme in the AHA-GUI repository for more info.
 
+### About Java Runtimes
+JDK8 or JDK11 are tested; JDK12 or later should work but are not tested against. Regardless which version you chose we recomend you always keep it **updated**. We will never advise you to stick with a particular version of Java within a major version, though we may advise you to steer clear of a particular version should we ever find an issue/regression/etc.
+
+**Windows/MacOS**: For those who do not wish to create oracle accounts or deal with their licensing (though their JRE/JDK will run this fine), [AdoptOpenJDK](https://adoptopenjdk.net) has precompiled OpenJDK installers for several platforms. Amazon with their [Amazon Corretto](https://aws.amazon.com/corretto/) progam which also provides a similar set of precompiled installers which they advertise as "No-cost, multiplatform, production-ready distribution of OpenJDK" 
+
+**Linux**: We would recomend whatever OpenJDK is in your package manger for the linux platform you're on. OpenJDK8 will suffice, in brief testing, OpenJDK11 may see better graphics performace on Linux. Using the command line flag `-Dsun.java2d.opengl=true` (example `java -Dsun.java2d.opengl=true -jar AHA-GUI.jar`) may provide improved graphics performance.
+
+#### Various tips/tricks/hints for platforms
+MacOS: the Java8 JREs seem to provide a bit more perofrmance (at least with graphstream), along with having HiDPI (Retina) support that works correctly with graphstream. Depending on various items, Java8 may not allow the menubar to move to the top of the screen macOS menubar location. JDK11 works well on non-retina machines that do not have performance issues.
+
+Windows: No major recomendations for JDK8 vs JDK11.
+
+Linux: Java11 seems to have better performance by default.
+
 ## Running AHA-GUI
 
 1. When you start the GUI it will ask you which file you would like to open. The other instructions about moving files or running with command line arguments to select file still work, but are no longer required.
@@ -134,6 +148,9 @@ File Menu:
 
  Window Menu: 
  - Reset Zoom: this button will reset the graph scale if things go awry, as they sometimes do.
+
+## Remote databases
+AHA-GUI supports looking up file hashes in remote databases. Currently [aDolus](https://www.adolus.com), an ICS Whitelist database, is the supported option. Using the `API Access` page on aDolus, get your API key. Paste the key in a file called `credentials.txt` and put it in the same directory as `AHA-GUI.jar`. When loading a file with hashes (requires AHA-Scraper Windows v0.8.5+), you will be able to either use the --updateFile commandline switch or use the `Update File...` command from the file menu. This will ask aDolus about each of the unique hashes found in the input file over an HTTPS connection, update the file with the results, and then reload the GUI (assuming the gui is running -- not applicable if you're just updating files using the cli method). Currently the aDolus file score, the quantity and numeric score of each CVE, the worst CVE (highest number), method of data entry into aDolus (parner submission, etc), and last time file was updated are what are written into the file after updating, and what are exposed in the GUI.
 
   
 ## AHA-GUI Data View Walkthrough  
