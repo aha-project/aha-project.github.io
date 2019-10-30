@@ -1,0 +1,60 @@
+---
+layout: page
+---
+
+
+<h3 style="margin-bottom: 20px;">AHA-Project (Attacksurface Host Analyzer Project) is a suite of tools that allow for scanning a host, display its processes. Processes are displayed with their interconnections, and security information about each process such as support for Address Space Layout Randomization (ASLR), No Execute bit (NX or DEP), and others. </h3>
+
+<h4 style="margin-bottom: 20px;">AHA-Project consists of two halves, the AHA-Scraper component available for <a href="https://github.com/aha-project/AHA-Scraper-Lin">Linux</a> or <a href="https://github.com/aha-project/AHA-Scraper-Win">Windows</a> which gathers the information, and <a href="https://github.com/aha-project/AHA-GUI">AHA-GUI</a> visualizer which displays the results of the scraper. </h4>
+
+<h4 style="margin-bottom: 0px;">AHA-Scraper Screenshot: </h4>
+<a style="margin-bottom: 20px;" href="https://aha-project.github.io/images/AHA-Scraper.png"><img src="https://aha-project.github.io/images/AHA-Scraper.png"></a>
+
+<h4 style="margin-bottom: 0px;">AHA-GUI Screenshot:</h4>
+<a style="margin-bottom: 20px;" href="https://aha-project.github.io/images/AHA-GUI.png"><img src="https://aha-project.github.io/images/AHA-GUI.png"></a>
+
+<h4 style="margin-bottom: 0px;" >AHA-Project Overview Video:</h4>
+<iframe style="width: 680px; height: 400px; resize: both; overflow: auto; margin-bottom: 30px;" src="https://www.youtube.com/embed/D_4unUlMa2Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+<h1>Documentation for the AHA-Project:</h1>
+
+{% for post in site.posts limit:20 %}
+<div>
+	<h2 class="post-title">
+		<a href="{{ post.url | relative_url }}">
+			{{ post.title }}
+		</a>
+	</h2>
+
+	<!--
+	<div class="post-meta">
+	   <div class="post-time">
+			<i class="fa fa-calendar-alt"></i>
+			<time datetime='{{ post.date | date: "%Y-%m-%d" }}'>{{ post.date | date_to_string }}</time>
+		</div>
+		<ul>
+			{% for tag in post.tags %}
+			<li><a href="{{'/tag/' | append: tag | relative_url }}">{{ tag }}</a></li>
+			{% endfor %}
+		</ul>
+	</div> 
+	-->
+
+	<div class="post-descr">
+		<p>
+			{{ post.description }}
+		</p>
+	</div>
+	<br>
+</div>
+{% endfor %}
+
+
+<!-- 
+<div class="post-footer">
+    <div class="column-full">
+        <h3><a href="{{ 'archive' | relative_url }}">Archive</a></h3>
+    </div>
+</div>
+-->
