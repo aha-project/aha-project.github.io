@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CaseStudy: Reducing AttackSurface
+title: CaseStudy on Reducing AttackSurface
 date: 2019-10-23 00:00
 description: Case study of how to use AHA-Project to decrease vulnerable attack surface.
 toc: true
