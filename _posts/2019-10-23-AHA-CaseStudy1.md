@@ -7,4 +7,4 @@ toc: true
 tags: AHA-GUI CaseStudy
 ---
 
-Test. This document is a work in progress and is expected to be complete by Midnight tonight. Please ignore for now.
+Test. This document is a work in progress and is expected to be completed soon™. Please ignore for now.
