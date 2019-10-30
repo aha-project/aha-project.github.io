@@ -81,12 +81,14 @@ These terms can also be OR-ed together with the `||` symbol:
 
 
 
-Graph view options and other features can be accessed through the menus (as of 0.6.8, previously they were buttons on the main application window). On macOS by default they will show up in the regular operating system menu bar on the top of the screen. All other platforms will have the menu at the top of each application window (or optionally on macOS if using the appropriate command line option).
+Graph view options and other features can be accessed through the menus (as of 0.6.8 and later, previously they were buttons on the main application window). On macOS by default they will show up in the regular operating system menu bar on the top of the screen. All other platforms will have the menu at the top of each application window (or optionally on macOS if using the appropriate command line option).
 
 File Menu:
  - Open... : This allows you to select a file. If a file is currently loaded, this will be closed and a new file loaded.
  - Open Data View : This opens the data view window which has a textual spreadsheet like representation of the graph data. This view will be explained in a later section of this document.
+ - Run AHA-Scraper... : On supported platforms (currently Windows only) this will run AHA-Scraper and pop up a progress window. Upon completion of the scan, the results will be loaded into AHA-GUI automatically. The default scan length target of 15s is used and is currently not configurable. For more options, run AHA-Scraper manually.
  - Update File... : This will attempt to use remote database credentials (default stored in credentials.txt in the same directory as AHA-GUI.jar) to update the currently opened file with information from the remote database, and then reload the resultant updated file.
+ - Preferences: This will open AHA-GUI's preferences panel which allows you to set your preferences to be used each time you launch AHA-GUI.
  - Exit : Exits AHA-GUI.
  
  View Menu: 
@@ -110,6 +112,9 @@ File Menu:
 
  Window Menu: 
  - Reset Zoom: this button will reset the graph scale if things go awry, as they sometimes do.
+
+## *New* Run AHA-Scraper from AHA-GUI
+As of v0.7.0 and later, AHA-GUI can run AHA-Scraper for you on supported platforms (currently Windows only). Using this feature from the `File` menu will run AHA-Scraper and pop up a progress window. Upon completion of the scan, the results will be loaded into AHA-GUI automatically. The default scan length target of 15s is used and is currently not configurable. For more options, run AHA-Scraper manually. You can read more about how to use it on the [AHA-Scraper Basics](https://aha-project.github.io/AHA-Scraper-Basics/) documentation.
 
 ## Remote databases
 AHA-GUI supports looking up file hashes in remote databases. Currently [aDolus](https://www.adolus.com), an ICS Whitelist database, is the supported option. Using the `API Access` page on aDolus, get your API key. Paste the key in a file called `credentials.txt` and put it in the same directory as `AHA-GUI.jar`. When loading a file with hashes (requires AHA-Scraper Windows v0.8.5+), you will be able to either use the --updateFile command line switch or use the `Update File...` command from the file menu. This will ask aDolus about each of the unique hashes found in the input file over an HTTPS connection, update the file with the results, and then reload the GUI (assuming the gui is running -- not applicable if you're just updating files using the cli method). Currently the aDolus file score, the quantity and numeric score of each CVE, the worst CVE (highest number), method of data entry into aDolus (partner submission, etc), and last time file was updated are what are written into the file after updating, and what are exposed in the GUI.
