@@ -10,11 +10,11 @@ tags: AHA-GUI Basics
 
 ## Dependencies and Installation
 
-AHA-GUI requires the latest Java 1.8.0+. We suggest OpenJDK on *nix platforms or AdoptOpenJDK.net installers for macOS™ and Windows™. The Oracle Java installers will work as well, but their recent license changes have made it (in our opinion) more trouble than they are worth to install, thus we only test against OpenJDK on linux and AdoptOpenJDK installed 1.8 and JDK11 LTS on macOS and Windows. While we attempt to test things as much as possible, we are researchers. There is no warranty or guarantee this software will work as expected.
+AHA-GUI requires the latest Java 1.8.0+. We suggest OpenJDK on *nix platforms or AdoptOpenJDK.net installers for macOS™ and Windows™. The Oracle Java installers will work as well, but their recent license changes have made it (in our opinion) more trouble than they are worth to install, thus we only test against OpenJDK on Linux distributions, and AdoptOpenJDK 1.8 and JDK11 LTS on macOS and Windows. While we attempt to test things as much as possible, we are researchers. There is no warranty or guarantee this software will work as expected.
 
 Get the current built and zipped version from our [AHA-GUI Releases Page](https://github.com/aha-project/AHA-GUI/releases) and unzip it in a place of your choosing.
 
-Note: If you would like to build from source there are additional requirements and instructions, please refer to the readme in the AHA-GUI repository for more info.
+Note: If you would like to build from source there are additional requirements and instructions, please refer to the readme in the [AHA-GUI repository](https://github.com/aha-project/AHA-GUI) for more info.
 
 ### About Java Runtimes
 JDK8 or JDK11 are tested; JDK12 and later should work but are not tested against. Regardless which version you chose we recommend you always keep it **updated**. We will never advise you to stick with a particular version of Java within a major version, though we may advise you to steer clear of a particular version should we ever find an issue/regression/etc.
