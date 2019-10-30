@@ -38,7 +38,7 @@ Example:
 
 Note: depending on your host security setup, you may need to Allow unsigned powershell scripts: `Set-ExecutionPolicy RemoteSigned` and hit `y` and enter. At some future date we will look into signing the necessary files to avoid this.
 
-## Running on Linux
+## Running on Linux - This section is outdated and will be updated soon
 
 Intial support for linux distros (presently tested on RHEL/Fedora/CentOS and Ubuntu/Debian) is now available!
 
