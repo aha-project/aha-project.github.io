@@ -10,7 +10,7 @@ tags: AHA-GUI Basics
 
 ## Dependencies and Installation
 
-AHA-GUI requires the latest Java 1.8.0+. We suggest OpenJDK on *nix platforms or AdoptOpenJDK.net installers for macOS™ and Windows™. The Oracle Java installers will work as well, but their recent license changes have made it (in our opinion) more trouble than they are worth to install, thus we only test against OpenJDK on Linux distributions, and AdoptOpenJDK 1.8 and JDK11 LTS on macOS and Windows. While we attempt to test things as much as possible, we are researchers. There is no warranty or guarantee this software will work as expected.
+AHA-GUI requires the current release of Java 1.8.0+. We suggest OpenJDK on *nix platforms or AdoptOpenJDK.net installers for macOS™ and Windows™. The Oracle Java installers will work as well, but their recent license changes have made it (in our opinion) more trouble than they are worth to install, thus we only test against OpenJDK on Linux distributions, and AdoptOpenJDK 1.8 and JDK11 LTS on macOS and Windows. While we attempt to test things as much as possible, we are researchers. We also only test current releases of JDKs (i.e. if current for 1.8 is 1.8.0_232, we don't test prior to update 232). There is no warranty or guarantee this software will work as expected.
 
 Get the current built and zipped version from our [AHA-GUI Releases Page](https://github.com/aha-project/AHA-GUI/releases) and unzip it in a place of your choosing.
 
@@ -49,6 +49,8 @@ If you invoke from the commandline, the following commandline arguments can be u
  * scorefile=scorefile.csv : use the scorefile specified after the equals sign
  * inputFile=inputFile.csv : use the inputFile specified after the equals sign
  * credsFile=inputFile.csv : use the credsFile for the credentials to update the input file (used with --updateFile) specified after the equals sign
+ 
+As of v0.7.0 or later, these command line options can be set as defaults in the `File -> Preferences`. Be sure to click the `save` button. Settings are applied at next launch of AHA-GUI.
 
 Example of AHA-GUI running:
 
@@ -56,7 +58,7 @@ Example of AHA-GUI running:
 
 ## AHA-GUI Main Window Walkthrough
 
-In the above image we can see the gui as it appears at launch. The lefthand side is the main AHA-GUI view area, the righthand side is the Graph Node Inspector which shows details of the graph nodes when they are clicked.
+In the above image we can see AHA-GUI as it appears at launch. The lefthand side is the main AHA-GUI view area, the righthand side is the Graph Node Inspector which shows details of the graph nodes when they are clicked.
 
 The main GUI is largely comprised of the graph view which shows external connections in red, internal connections in white, and duplicate connections in darker versions of each of those colors (i.e. darker red, and gray for duplicate connections). Connections in TIME_WAIT, CLOSE_WAIT, SYN_SENT, etc. are drawn as a dashed line. All solid connections with the exception of the connections drawn to the "External" virtual node are established connections. 
 
