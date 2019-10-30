@@ -12,6 +12,7 @@
                       <i class="fa fa-calendar-alt"></i>
                       <time>{{ page.date | date_to_string }}</time>
                     </div>-->
+                    <p>Tagged:</p>
                     <ul>
                       {% for tag in page.tags %}
                         <li><a href="{{ '/tag/' | append: tag | relative_url }}">{{ tag }}</a></li>
