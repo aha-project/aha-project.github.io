@@ -13,7 +13,8 @@ This document is a simple example and/or case study of how to use AHA-GUI to aid
 Understanding attack surface is a key in reducing system complexity and exploitability. In combination with standard attack surface reduction techniques, AHA-Project tools can help identify, understand, and reduce attack surface.
 
 
-![Pre-Scan](https://aha-project.github.io/images/CaseStudy1/PreScan.png)
+[!![Pre-Scan](https://aha-project.github.io/images/CaseStudy1/PreScan.png)][Pre-Scan]
+[Pre-Scan]: https://aha-project.github.io/images/CaseStudy1/PreScan.png
 This image above shows a VM prior to any common attack surface reduction practices being employed. We can see there are many processes on the machine, lots of system processes, and several application processes.
 
 Two hardening techniques will be applied here:
