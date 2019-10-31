@@ -34,7 +34,7 @@ Two hardening techniques will be applied here:
 
 
 
-
+<!-- Adding the references below do not show up textually in the output, but do make the images clickable -->
 [Pre-Scan]: https://aha-project.github.io/images/CaseStudy1/PreScan.png
 [Post-Scan]: https://aha-project.github.io/images/CaseStudy1/PostScan.png
 
