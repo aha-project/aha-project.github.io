@@ -54,7 +54,7 @@ As of v0.7.0 or later, these command line options can be set as defaults in the 
 
 Example of AHA-GUI running:
 
-![Image](https://aha-project.github.io/images/AHA-GUI.png)
+[![Image](https://aha-project.github.io/images/AHA-GUI.png)][AHA-GUI]
 
 ## AHA-GUI Main Window Walkthrough
 
@@ -125,13 +125,13 @@ AHA-GUI supports looking up file hashes in remote databases. Currently [aDolus](
 There are presently two tabs in the Data View: Vulnerabilty Metrics, and Listening Processes.
 
 ### Vulnerability Metrics
-![Image](https://aha-project.github.io/images/AHA-GUI-DataView-VulnMetrics-Current.png)
+[![DataView-VulnMetrics](https://aha-project.github.io/images/AHA-GUI-DataView-VulnMetrics-Current.png)][DataView-VulnMetrics]
 This view shows a summary of the evaluated graph, and also reflects what is produced in the AHA-GUI-Report.csv 
 The top portion shows overall statistics as well as when the scan data was taken/etc.
 Below that is a table reflecting what is visible in the graph. Each row is a visible process/graph node, with useful data shown about each process, which is a much quicker way to compare things than attempting to click on each node in the graph and see values. Future versions will allow node highlighting in the graph based on clicks in the data view, and will probably allow multiple inspectors to also help facilitate process comparisons.
 
 ### Listening Processes
-![DataView-ListeningProcs](https://aha-project.github.io/images/AHA-GUI-DataView-ListeningProcs-Current.png)
+[![DataView-ListeningProcs](https://aha-project.github.io/images/AHA-GUI-DataView-ListeningProcs-Current.png)][DataView-ListeningProcs]
 This view shows all bound ports visible in the graph, and which processes they are bound to, which helps give an overall view of services in the graph, as well as which are bound to internal only ports vs externally visible ports.
   
 ## Attack Surface Scoring methodology
@@ -140,3 +140,9 @@ As noted above in the AHA-GUI walkthrough, there are several scoring methods, bu
 One thing to keep in mind for the scoring methods discussed in this section, is that they apply to the data that is available. In this case the data was gathered via CurrPorts, which is like a very advanced version of netstat (linux uses netstat and supporting other scripts), which provides us with processes and their open ports. We then make further passes on this data to determine security features of the executable binaries which are running for each process, as well as another pass to determine effective process privileges. While this is a very interesting dataset to analize please note that it does not as yet include any other platform specific security features such as ACL discovery, or reading of local machine firewall rules. This means that if the local firewall is active, that would impact established connections (i.e. they would probably not be established if that's what the firewall is there to do), but we will still show ports that are bound on externally available IP address/Port combos as externally available. It is up to the user to audit their firewall/ACLs and ensure that the processes we discovered which could be available from external machines/networks/hosts/etc are properly firewalled.
 
 In general, other scoring methods utilize the outputs of the "Normal" scoring algorithm, and are either assigning weight by positions in the node graph, or attempting to suss out other connections that are not visible via the tcp connection graph, such as connections by user account (WorstProcScore) or increase/reduction of attackability relative to the externally accessible nodes in the graph (ECScore).
+
+
+
+[AHA-GUI]: https://aha-project.github.io/images/AHA-GUI.png
+[DataView-VulnMetrics]: https://aha-project.github.io/images/AHA-GUI-DataView-VulnMetrics-Current.png
+[DataView-ListeningProcs]: https://aha-project.github.io/images/AHA-GUI-DataView-ListeningProcs-Current.png
