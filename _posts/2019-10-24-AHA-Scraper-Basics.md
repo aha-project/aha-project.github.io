@@ -83,7 +83,7 @@ the process information.
 - `sudo python python_aha.py -f _`: Uses the default file `BinaryAnalysis.csv`.  
 - `sudo python python_aha.py -f "s p a c e.csv"`: Outputs to a space seperated file.  
 
-## Defaults (With underscore instead of field)  
+#### Defaults (With underscore instead of field)  
 - `f` outputs to `BinaryAnalysis.csv`  
 - `o`/`i` outputs to `debug-out.json`.  
 - `l` runs for 2 minutes or `120` seconds.  
