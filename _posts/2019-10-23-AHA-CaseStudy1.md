@@ -7,4 +7,24 @@ toc: true
 tags: AHA-GUI CaseStudy
 ---
 
-Test. This document is a work in progress and is expected to be completed soon™. Please ignore for now.
+This document is a simpele example and/or case study of how to use AHA-GUI to aid in reducing attack surface of a scanned host.
+
+
+
+
+
+![Pre-Scan](https://aha-project.github.io/images/CaseStudy1/PreScan.png)
+
+
+
+![Post-Scan](https://aha-project.github.io/images/CaseStudy1/PostScan.png)
+
+
+
+
+
+
+
+
+
+

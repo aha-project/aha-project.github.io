@@ -131,7 +131,7 @@ The top portion shows overall statistics as well as when the scan data was taken
 Below that is a table reflecting what is visible in the graph. Each row is a visible process/graph node, with useful data shown about each process, which is a much quicker way to compare things than attempting to click on each node in the graph and see values. Future versions will allow node highlighting in the graph based on clicks in the data view, and will probably allow multiple inspectors to also help facilitate process comparisons.
 
 ### Listening Processes
-![Image](https://aha-project.github.io/images/AHA-GUI-DataView-ListeningProcs-Current.png)
+![DataView-ListeningProcs](https://aha-project.github.io/images/AHA-GUI-DataView-ListeningProcs-Current.png)
 This view shows all bound ports visible in the graph, and which processes they are bound to, which helps give an overall view of services in the graph, as well as which are bound to internal only ports vs externally visible ports.
   
 ## Attack Surface Scoring methodology
