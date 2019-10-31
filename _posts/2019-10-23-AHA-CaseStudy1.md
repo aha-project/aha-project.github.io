@@ -24,7 +24,7 @@ Two hardening techniques will be applied here:
      - Uninstall/Removal of svchost based services that are not needed
      - Removal of the print spooler
 
-
+  
 [![Post-Scan](https://aha-project.github.io/images/CaseStudy1/PostScan.png)][Post-Scan]
 
 
