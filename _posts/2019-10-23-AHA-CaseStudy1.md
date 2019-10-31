@@ -23,7 +23,7 @@ Two hardening techniques will be applied here:
      - Uninstall/Removal of svchost based services that are not needed
      - Removal of the print spooler
 
-[![Post-Scan](https://aha-project.github.io/images/CaseStudy1/PostScan.png)](https://aha-project.github.io/images/CaseStudy1/PreScan.png)
+[![Post-Scan](https://aha-project.github.io/images/CaseStudy1/PostScan.png)](https://aha-project.github.io/images/CaseStudy1/PostScan.png)
 
 After applying the stated methods, we can re-scan using AHA-Scraper and view in AHA-GUI to see that the number of processes has been dramatically reduced.
 
