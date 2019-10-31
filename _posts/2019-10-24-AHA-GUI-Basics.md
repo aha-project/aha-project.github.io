@@ -54,8 +54,6 @@ As of v0.7.0 or later, these command line options can be set as defaults in the 
 
 Example of AHA-GUI running:
 
-[![DataView-VulnMetrics](https://aha-project.github.io/images/AHA-GUI-DataView-VulnMetrics-Current.png)](https://aha-project.github.io/images/AHA-GUI-DataView-VulnMetrics-Current.png)
-
 [![AHA-GUI](https://aha-project.github.io/images/AHA-GUI.png)](https://aha-project.github.io/images/AHA-GUI.png)
 
 ## AHA-GUI Main Window Walkthrough
