@@ -7,7 +7,7 @@ toc: true
 tags: AHA-GUI CaseStudy
 ---
 
-This document is a simpele example and/or case study of how to use AHA-GUI to aid in reducing attack surface of a scanned host.
+This document is a simple example and/or case study of how to use AHA-GUI to aid in reducing attack surface of a scanned host.
 
 
 Understanding attack surface is a key in reducing system complexity and exploitability. In combination with standard attack surface reduction techniques, AHA-Project tools can help identify, understand, and reduce attack surface.
@@ -24,7 +24,7 @@ Two hardening techniques will be applied here:
      - Removal of the print spooler
 
 
-![Post-Scan](https://aha-project.github.io/images/CaseStudy1/PostScan.png)
+[![Post-Scan](https://aha-project.github.io/images/CaseStudy1/PostScan.png)][Post-Scan]
 
 
 
@@ -33,5 +33,5 @@ Two hardening techniques will be applied here:
 
 
 
-
+[Post-Scan]: https://aha-project.github.io/images/CaseStudy1/PostScan.png
 
