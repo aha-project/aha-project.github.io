@@ -34,7 +34,7 @@ By default the script scans for a few seconds, to generate at least some traffic
 
 Example:
 
-![Image](https://aha-project.github.io/images/AHA-Scraper.png)
+[![Image](https://aha-project.github.io/images/AHA-Scraper.png)](https://aha-project.github.io/images/AHA-Scraper.png)
 
 Note: depending on your host security setup, you may need to Allow unsigned powershell scripts: `Set-ExecutionPolicy RemoteSigned` and hit `y` and enter. At some future date we will look into signing the necessary files to avoid this.
 
