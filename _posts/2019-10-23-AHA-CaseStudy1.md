@@ -14,6 +14,7 @@ Understanding attack surface is a key in reducing system complexity and exploita
 
 
 [![Pre-Scan](https://aha-project.github.io/images/CaseStudy1/PreScan.png)][Pre-Scan]
+
 [Pre-Scan]: https://aha-project.github.io/images/CaseStudy1/PreScan.png
 
 This image above shows a VM prior to any common attack surface reduction practices being employed. We can see there are many processes on the machine, lots of system processes, and several application processes.
