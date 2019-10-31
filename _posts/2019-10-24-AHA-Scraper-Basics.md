@@ -44,7 +44,7 @@ While the scraper has been marked stable, it still has not received a lot of ext
 
 There is no implied waranty, or liability assumed by us if you run this, but there should not be anything that can cause side effects either.
 
-# Scraper usage
+### Scraper usage
 Clone or download the repo from github
 
 To run the scraper:
@@ -55,7 +55,7 @@ To run the scraper:
 1. Display the help menu with `sudo python python_aha.py -h`
 1. When run, it will first scan then the data is processed. No new data will be collected in the processing phase. 
 
-## Scraper Help Menu
+### Scraper Help Menu
 To use a command line argument follow the base command(`sudo python python_aha.py`) 
 with any number of the below arguments. Arguments must appear in a space separated 
 list. Any arguments requiring additional fields must have them supplied immediately 
@@ -76,7 +76,7 @@ optional, just supply an underscore instead of the field.
 - `o` {file}    : (**DEV**)Output recall file. Requires 1 argument, filename.  
 - `i` {file}    : (**DEV**)Simulate run from outputted recall. Requires 1 argument, filename.  
 
-### Examples 
+#### Examples 
 - `sudo python python_aha.py -l 320 -k`: To scan for 320 seconds and not output kernel processes.  
 - `sudo python python_aha.py -p`: To scan without processes. Very limited without 
 the process information.  
@@ -91,7 +91,7 @@ the process information.
 - `r` shows first scan it was found in.  
 
 
-## Normal Behavior 
+### Normal Behavior 
 - There are three scans:
   - Process 
   - Network
