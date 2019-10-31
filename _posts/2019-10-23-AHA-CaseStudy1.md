@@ -12,7 +12,7 @@ This document is a simple example and/or case study of how to use AHA-GUI to aid
 
 Understanding attack surface is a key in reducing system complexity and exploitability. In combination with standard attack surface reduction techniques, AHA-Project tools can help identify, understand, and reduce attack surface.
 
-[![Pre-Scan](https://aha-project.github.io/images/CaseStudy1/PreScan.png)][Pre-Scan]
+[![Pre-Scan](https://aha-project.github.io/images/CaseStudy1/PreScan.png)](https://aha-project.github.io/images/CaseStudy1/PreScan.png)
 
 This image above shows a VM prior to any common attack surface reduction practices being employed. We can see there are many processes on the machine, lots of system processes, and several application processes.
 
@@ -23,12 +23,8 @@ Two hardening techniques will be applied here:
      - Uninstall/Removal of svchost based services that are not needed
      - Removal of the print spooler
 
-[![Post-Scan](https://aha-project.github.io/images/CaseStudy1/PostScan.png)][Post-Scan]
+[![Post-Scan](https://aha-project.github.io/images/CaseStudy1/PostScan.png)](https://aha-project.github.io/images/CaseStudy1/PreScan.png)
 
 After applying the stated methods, we can re-scan using AHA-Scraper and view in AHA-GUI to see that the number of processes has been dramatically reduced.
 
-
-<!-- Adding the references below do not show up textually in the output, but do make the images clickable -->
-[Pre-Scan]: https://aha-project.github.io/images/CaseStudy1/PreScan.png
-[Post-Scan]: https://aha-project.github.io/images/CaseStudy1/PostScan.png
 
