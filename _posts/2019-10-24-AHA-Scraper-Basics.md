@@ -40,17 +40,68 @@ Note: depending on your host security setup, you may need to Allow unsigned powe
 
 ## Running on Linux - This section is outdated and will be updated soon
 
-Intial support for linux distros (presently tested on RHEL/Fedora/CentOS and Ubuntu/Debian) is now available!
+While the scraper has been marked stable, it still has not received a lot of external testing as of yet, but has been tested internally on CentOS 7.5+ (a RHEL derivative), Kali 2018.2+ (a Debian derivative), and at present we have no known issues.
 
-### Dependencies
-The Linux AHA-Scraper presently has no real dependencies, but is only tested on 64bit versions of RHEL and Debian derivitives (RHEL7/CentOS7/Ubuntu 18.04/Kali Linux (at present) specifically). Support for other distros will evolve and improve as time goes on. As of August 1st 2018 there are no longer any known issues that impede the general usage of the Linux scraper. In the future we will be releasing a python 2.7 version (summer 2019?) followed by a migration to python 3.x in sept/oct.
+There is no implied waranty, or liability assumed by us if you run this, but there should not be anything that can cause side effects either.
 
-### Usage
-use git clone, the github client, or click 'download project' to get the repsitory on your computer. Then cd into the directory and run:
+### Scraper usage
+Clone or download the repo from github
 
-```./AHA-Scraper-Linux.sh```
+To run the scraper:
+1. Open a shell
+1. `cd` to the directory containing the script
+1. Run the script by typing `sudo python python_aha.py`
+1. Install any packages that the script says are missing.
+1. Display the help menu with `sudo python python_aha.py -h`
+1. When run, it will first scan then the data is processed. No new data will be collected in the processing phase. 
 
-Upon completion, `BinaryAnalysis.csv` will be produced containing the results of the scan.
+### Scraper Help Menu
+To use a command line argument follow the base command(`sudo python python_aha.py`) 
+with any number of the below arguments. Arguments must appear in a space separated 
+list. Any arguments requiring additional fields must have them supplied immediately 
+after the argument. Consult the `Defaults` and `Normal Behavior` sections to 
+understand how the program works without additional arguments. All argument fields are 
+optional, just supply an underscore instead of the field.  
+- `h` : Display the help menu.  
+- `H` : Do not compute executable hashes.  
+- `k` : Ignore kernel processes.  
+- `e` : Ignore network entries.  
+- `n` : Ignore named pipes.  
+- `p` : Ignore all processes.  
+  - This will limit the named pipe info. A large amount of infor may be missing.  
+- `r` : For repeated scan use most recent scan time. Default is first time it was found.  
+- `l` {seconds} : Long scan. Time to scan in seconds.  
+- `f` {file}    : Output file to write results to. Relative shell's working directory.  
+- `d` {level}   : (**DEV**)Debug menu. Requires 1 arguments, debug level {int}.  
+- `o` {file}    : (**DEV**)Output recall file. Requires 1 argument, filename.  
+- `i` {file}    : (**DEV**)Simulate run from outputted recall. Requires 1 argument, filename.  
 
-Note: you may need to make the script executable before running by using `chmod +x ./AHA-Scraper-Linux.sh`
+#### Examples 
+- `sudo python python_aha.py -l 320 -k`: To scan for 320 seconds and not output kernel processes.  
+- `sudo python python_aha.py -p`: To scan without processes. Very limited without 
+the process information.  
+- `sudo python python_aha.py -f _`: Uses the default file `BinaryAnalysis.csv`.  
+- `sudo python python_aha.py -f "s p a c e.csv"`: Outputs to a space seperated file.  
+
+#### Defaults (With underscore instead of field)  
+- `f` outputs to `BinaryAnalysis.csv`  
+- `o`/`i` outputs to `debug-out.json`.  
+- `l` runs for 2 minutes or `120` seconds.  
+- `d` runs as debug level 4.  
+- `r` shows first scan it was found in.  
+
+
+### Normal Behavior 
+- There are three scans:
+  - Process 
+  - Network
+  - Named Pipe
+- Scans without the `l` argument will run one cycle which is faster than one second.
+Although, scans on the edge of a second may show scanned items in different times.  
+- Scan over time defaults to detection time being the first time that row was scanned. 
+
+The resulting `BinaryAnalysis.csv` can either be viewed in a text/spreadsheets app (such as Excel) or visualized in the [AHA-GUI](https://github.com/aha-project/AHA-GUI).
+
+***Note***: The program must be run as sudo.
+
 
