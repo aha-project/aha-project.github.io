@@ -9,6 +9,7 @@ tags: AHA-GUI CaseStudy
 
 This document is a simple example and/or case study of how to use AHA-GUI to aid in reducing attack surface of a scanned host.
 
+[![Comparison-Img](https://aha-project.github.io/images/CaseStudy1/Comparison.png)](https://aha-project.github.io/images/CaseStudy1/Comparison.png)
 
 Understanding attack surface is a key in reducing system complexity and exploitability. In combination with standard attack surface reduction techniques, AHA-Project tools can help identify, understand, and reduce attack surface.
 
